@@ -1,0 +1,25 @@
+{
+  "name": "Next.js Dev",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20"
+    }
+  },
+  "extensions": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "bradlc.vscode-tailwindcss",
+    "eamodio.gitlens",
+    "dsznajder.es7-react-js-snippets"
+  ],
+  "postCreateCommand": "npm install",
+  "portsAttributes": {
+    "3000": {
+      "label": "Next.js App",
+      "onAutoForward": "notify"
+    }
+  },
+  "forwardPorts": [3000],
+  "remoteUser": "node"
+}
