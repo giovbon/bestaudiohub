@@ -1,35 +1,59 @@
 import React from 'react'
 import Logo from '/best-audio-hub-logo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import { faMagnifyingGlass, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { useState } from 'react';
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <div>
-      <header className="flex justify-between items-center h-16 py-9 px-9 bg-white">
-      {/* Logo à esquerda */}
-      <div className="flex-shrink-0">
-        <a href="#"> 
-            <img src={Logo} alt="Logo" className="h-10" /> 
-        </a>
-      </div>
-      
-      {/* Links centralizados */}
-      
-      <nav className="flex justify-center items-center flex-grow gap-4 space-x-6">
-        <a href="#" className="text-gray-600 text-lg hover:underline">Home</a>
-        <a href="#" className="text-gray-600 text-lg hover:underline">Blog</a>
-        <a href="#" className="text-gray-600 text-lg hover:underline">About</a>
-        <a href="#" className="text-gray-600 text-lg hover:underline">Contact</a>
-      </nav>
+    <div className="relative">
+      <header className="flex items-center justify-between h-16 py-4 px-6 bg-white">
+        <div className="w-[125px] sm:w-[100px] md:w-[125px]">
+          <a href="#"> 
+            <img src={Logo} alt="Logo" className="h-full w-full object-contain" /> 
+          </a>
+        </div>
 
-      {/* Ícone de busca à direita */}
-      <div className="flex-shrink-0">
-        <FontAwesomeIcon icon={faMagnifyingGlass} className="text-gray-600 text-lg" />
+        <nav className="hidden md:flex md:flex-row md:justify-center space-x-6">
+          <a href="#" className="text-gray-600 text-lg hover:underline">Home</a>
+          <a href="#" className="text-gray-600 text-lg hover:underline">Blog</a>
+          <a href="#" className="text-gray-600 text-lg hover:underline">About</a>
+          <a href="#" className="text-gray-600 text-lg hover:underline">Contact</a>
+        </nav>
+
+        <div className="flex items-center gap-4">
+          <FontAwesomeIcon 
+            icon={faMagnifyingGlass} 
+            className="text-gray-600 text-2xl hidden md:block" 
+          />
+          <button 
+            onClick={toggleMenu} 
+            className="text-gray-600 flex md:hidden"
+          >
+            <FontAwesomeIcon 
+              icon={isMenuOpen ? faTimes : faBars} 
+              className="text-2xl" 
+            />
+          </button>
+        </div>
+      </header>
+
+      <div className={`fixed top-16 left-0 w-full bg-white shadow-md md:hidden ${isMenuOpen ? 'block' : 'hidden'}`}>
+        <nav className="flex flex-col p-4">
+          <a href="#" className="text-gray-600 text-lg hover:underline py-2">Home</a>
+          <a href="#" className="text-gray-600 text-lg hover:underline py-2">Blog</a>
+          <a href="#" className="text-gray-600 text-lg hover:underline py-2">About</a>
+          <a href="#" className="text-gray-600 text-lg hover:underline py-2">Contact</a>
+        </nav>
       </div>
-    </header>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
