@@ -13,21 +13,21 @@ const Header = () => {
 
   return (
     <div className="relative">
-      <header className="flex items-center justify-between h-16 py-4 px-6 bg-white">
-        <div className="w-[125px] sm:w-[100px] md:w-[125px]">
+      <header className="flex items-center justify-between h-16 py-10 px-6 bg-white">
+        <div className="w-[105px] md:w-[125px] h-[120px]">
           <a href="#"> 
             <img src={Logo} alt="Logo" className="h-full w-full object-contain" /> 
           </a>
         </div>
 
-        <nav className="hidden md:flex md:flex-row md:justify-center space-x-6">
-          <a href="#" className="text-gray-600 text-lg hover:underline">Home</a>
-          <a href="#" className="text-gray-600 text-lg hover:underline">Blog</a>
-          <a href="#" className="text-gray-600 text-lg hover:underline">About</a>
-          <a href="#" className="text-gray-600 text-lg hover:underline">Contact</a>
-        </nav>
+        <div className="flex items-center gap-4 md:ml-auto">
+          <nav className="hidden md:flex md:flex-row md:justify-center space-x-6">
+            <a href="#" className="text-gray-600 text-lg hover:underline">Home</a>
+            <a href="#" className="text-gray-600 text-lg hover:underline">Blog</a>
+            <a href="#" className="text-gray-600 text-lg hover:underline">About</a>
+            <a href="#" className="text-gray-600 text-lg hover:underline">Contact</a>
+          </nav>
 
-        <div className="flex items-center gap-4">
           <FontAwesomeIcon 
             icon={faMagnifyingGlass} 
             className="text-gray-600 text-2xl hidden md:block" 
@@ -55,5 +55,6 @@ const Header = () => {
     </div>
   );
 };
+
 
 export default Header;
