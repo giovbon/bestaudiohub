@@ -24,7 +24,7 @@ const Header = () => {
 
         <div className="flex items-center gap-4 md:ml-auto">
           <nav className="hidden md:flex md:flex-row md:justify-center space-x-6">
-            <a href="#" className="text-gray-600 text-lg hover:underline">Home</a>
+            <Link to="/" className="text-gray-600 text-lg hover:underline">Home</Link>
             <Link to="/blog" className="text-gray-600 text-lg hover:underline">Blog</Link>
             <Link to="/about" className="text-gray-600 text-lg hover:underline">About</Link>
             <Link to="/contact" className="text-gray-600 text-lg hover:underline">Contact</Link>
