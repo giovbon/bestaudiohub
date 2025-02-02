@@ -22,8 +22,6 @@ const Index = () => {
                     <h1 className="text-2xl font-bold my-8">READ ABOUT US</h1>
                 </div>
             </div>
-
-            <Footer />
         </>
     )
 }
