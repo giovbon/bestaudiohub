@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <>
             <hr className="border-t border-[#dee0e2]" />
-            <footer className="w-full bg-cover bg-center flex flex-col md:flex-row items-center h-auto justify-center">
+            <footer className="w-full bg-cover bg-center flex flex-col md:flex-row items-center h-auto justify-center bg-[#f7f9fb]">
                 <div className={`w-full max-w-5xl px-6 py-6 text-center`}>
                     <div className="flex flex-col md:flex-row justify-between items-center pb-6">
                         <div className="flex items-center mb-4 md:mb-0">
@@ -21,7 +21,7 @@ const Footer = () => {
                     </div>
                     
                     <div className="mt-6 py-4">
-                        <p className="text-gray-500 text-xs bg-[#f7f9fb]">
+                        <p className="text-gray-500 text-xs">
                             Copyright © 2025 Best Audio Hub | Powered by Best Audio Hub
                         </p>
                     </div>
